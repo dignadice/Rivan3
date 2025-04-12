@@ -1,6 +1,6 @@
 !@@@FOR CORE TAAS ONLY
 config t
-   hostname CORETAAS-12
+   hostname CORETAAS-42
    enable secret pass
    service password-encryption
    no logging console
