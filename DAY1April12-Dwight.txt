@@ -63,7 +63,7 @@ config t
 	 description IPCCTV
    Int Vlan 100
      no shutdown
-	 ip add 10.22.100.4 255.255.255.0
+	 ip add 10.42.100.4 255.255.255.0
 	 description VOICEVLAN
 
 EncorLAB1: trunk it, etherchannit, allowit
@@ -238,6 +238,18 @@ Ephone 2
 end
 
 @@@Enabling Video Calls
+configure terminal
+ephone 1
+   video
+   voice service voip
+   h323
+   call start slow
+ephone 2
+   video
+   voice service voip
+   h323
+   call start slow
+end
 
 !!@@allow incoming calls
 configure terminal
@@ -341,18 +353,6 @@ config t
 	 ip add 42.0.0.1 255.255.255.255
  end
 
-
-
-
-
-
-
-
-
-
-
-
-
 ! mULTI AREA OSPF CONFIGURATION:
 @edge:
 config t
@@ -362,9 +362,7 @@ network 200.0.0.0 0.0.0.255 area 0
 network 42.0.0.1 0.0.0.0 area 42
 network 10.42.42.0 0.0.0.255 area 42
 @CoreBABA:   use Route summarization:
-config t
-router ospf 1
-network 10.42.0.0 0.0.255.255 area 42
+
 @CUCN:  use SUperTamad method:
 config t
 router ospf 1
@@ -393,7 +391,7 @@ network 0.0.0.0  255.255.255.255 area 42
  ip route 10.72.0.0 255.255.0.0 200.0.0.72
  ip route 10.81.0.0 255.255.0.0 200.0.0.81
  ip route 10.82.0.0 255.255.0.0 200.0.0.82
- ip route 10._.0.0 255.255.0.0 10._._.4
+ ip route 10.42.0.0 255.255.0.0 10.42.42.4
  end
  
 *********************************************
