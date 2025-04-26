@@ -362,13 +362,13 @@ network 200.0.0.0 0.0.0.255 area 0
 network 42.0.0.1 0.0.0.0 area 42
 network 10.42.42.0 0.0.0.255 area 42
 @CoreBABA:   use Route summarization:
-
+config t
+router ospf 1
+network 10.42.0.0 0.0.255.255 area 42
 @CUCN:  use SUperTamad method:
 config t
 router ospf 1
 network 0.0.0.0  255.255.255.255 area 42
-
-
 
 
 
