@@ -155,10 +155,10 @@ IP CAMERA needs MAC dhcp Reservation:
 CoreBABA:
 ip dhcp pool CAM6
 host 10.42.50.6 255.255.255.0
-client-identifier 001a.070a.24ef
+client-identifier 001a.0709.c232
 ip dhcp pool CAM8
 host 10.42.50.8 255.255.255.0
-client-identifier 001a.0709.c232
+client-identifier 001a.070a.24ef
 end
 sh ip dhcp binding
 
@@ -259,10 +259,10 @@ ipv4 0.0.0.0 0.0.0.0
 exit
 
 configure terminal
-! dial-peer voice 11 Voip
-! destination-pattern 11..
-! session target ipv4:10.11.100.8
-! codec g711ULAW
+dial-peer voice 11 Voip
+destination-pattern 11..
+session target ipv4:10.11.100.8
+codec g711ULAW
  dial-peer voice 12 Voip
  destination-pattern 12..
  session target ipv4:10.12.100.8
